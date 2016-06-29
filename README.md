@@ -7,5 +7,5 @@
 This repository is used as starting point for Go projects.
 
 
-[license]:  https://raw.githubusercontent.com/steenzout/go-dao/master/LICENSE   "Apache License 2.0"
+[license]:  https://raw.githubusercontent.com/steenzout/go-primogen/master/LICENSE   "Apache License 2.0"
 
