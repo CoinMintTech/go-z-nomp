@@ -9,9 +9,13 @@ sudo: false
 env:
     CI_SERVICE=travis-ci
 
+install:
+  - go get -v github.com/h12w/gosweep
+  - go get -v github.com/Masterminds/glide
+  - glide install
+
 script:
   - go test -v ./...
 
 after_success:
   - bash ${GOPATH}/src/github.com/h12w/gosweep/gosweep.sh
-
