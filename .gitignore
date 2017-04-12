@@ -1,6 +1,8 @@
 profile.cov
 Godeps/Readme
 
+vendor/
+
 # Created by https://www.gitignore.io/api/go
 
 ### Go ###
