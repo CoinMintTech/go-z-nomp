@@ -5,7 +5,11 @@ cache:
     - ${GOPATH}/src/github.com/h12w
     - ${GOPATH}/src/github.com/Masterminds    
     - ${GOPATH}/src/github.com/mattn
-go: 1.6
+go:
+  - tip
+  - 1.8
+  - 1.7
+  - 1.6
 sudo: false
 
 env:
