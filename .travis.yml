@@ -18,9 +18,4 @@ install:
   - glide install
 
 script:
-  - go test -v ./...
-  - pwd
-  - ls -lha
-
-after_success:
   - bash ${GOPATH}/src/github.com/h12w/gosweep/gosweep.sh
