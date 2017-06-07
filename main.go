@@ -1,4 +1,4 @@
-package primogen
+package api
 
 import (
 	"fmt"
