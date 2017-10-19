@@ -4,8 +4,8 @@ cache:
     - ${GOPATH}/src/github.com/${TRAVIS_REPO_SLUG}/vendor
     - ${GOPATH}/src/github.com/fzipp
     - ${GOPATH}/src/github.com/h12w
-    - ${GOPATH}/src/github.com/Masterminds    
     - ${GOPATH}/src/github.com/mattn
+    - ${GOPATH}/src/golang/dep
 go:
   - tip
   - 1.8
@@ -21,7 +21,7 @@ install:
   - go get -v -u github.com/fzipp/gocyclo
   - go get -v -u github.com/h12w/gosweep
   - go get -v -u github.com/mattn/goveralls
-  - go get -v -u github.com/Masterminds/glide
+  - go install github.com/golang/dep/cmd/dep
   - dep ensure
 
 script:
