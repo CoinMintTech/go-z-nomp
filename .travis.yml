@@ -22,7 +22,7 @@ install:
   - go get -v -u github.com/h12w/gosweep
   - go get -v -u github.com/mattn/goveralls
   - go get -v -u github.com/Masterminds/glide
-  - glide install
+  - dep ensure
 
 script:
   - bash ${GOPATH}/src/github.com/h12w/gosweep/gosweep.sh
