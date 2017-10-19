@@ -8,9 +8,8 @@ cache:
     - ${GOPATH}/src/golang/dep
 go:
   - tip
+  - 1.9
   - 1.8
-  - 1.7
-  - 1.6
 sudo: false
 
 env:
@@ -21,7 +20,7 @@ install:
   - go get -v -u github.com/fzipp/gocyclo
   - go get -v -u github.com/h12w/gosweep
   - go get -v -u github.com/mattn/goveralls
-  - go get -v -u github.com/tools/godep
+  - go get -v -u github.com/golang/dep/cmd/dep
   - dep ensure
 
 script:
