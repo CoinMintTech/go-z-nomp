@@ -1,12 +1,19 @@
+SHELL=/bin/bash
+PLATFORM=$(shell go env GOOS)
+ARCH=$(shell go env GOARCH)
+GOPATH=$(shell go env GOPATH)
+GOBIN=$(GOPATH)/bin
+
 default: build
 
-build: build_darwin
+build:
+	go fmt ./...
+	DEP_BUILD_PLATFORMS=$(PLATFORM) DEP_BUILD_ARCHS=$(ARCH) ./bin/build-all.bash
 
-build_linux:
-	CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -ldflags "-s" -a -installsuffix cgo -o main.linux
-
-build_darwin:
-	CGO_ENABLED=0 GOOS=darwin GOARCH=amd64 go build -ldflags "-s" -a -installsuffix cgo -o main
+test:
+	go test ./...
 
 vendor:
-	glide install
+	dep ensure
+
+.PHONY: build test
