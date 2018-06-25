@@ -13,7 +13,6 @@ go:
   - tip
   - 1.10.x
   - 1.9
-  - 1.8
 sudo: false
 
 env:
