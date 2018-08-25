@@ -5,7 +5,7 @@
 [![Coverage Status](https://coveralls.io/repos/CoinMintTech/go-z-nomp/badge.svg?branch=master&service=github)](https://coveralls.io/github/CoinMintTech/go-z-nomp?branch=master)
 [![Go Report Card](https://goreportcard.com/badge/github.com/CoinMintTech/go-z-nomp)](https://goreportcard.com/report/github.com/CoinMintTech/go-z-nomp)
 
-[![Project](https://www.openhub.net/p/go-CoinMintTech-cmt-znomp/widgets/project_thin_badge.gif)][project]
+[![Project](https://www.openhub.net/p/go-CoinMintTech-z-nomp/widgets/project_thin_badge.gif)][project]
 
 Golang client for the [z-nomp][z-nomp] mining pool.
 
