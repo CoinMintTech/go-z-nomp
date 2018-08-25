@@ -20,7 +20,7 @@
 
 set -e
 
-REPO_NAME='primogen'
+REPO_NAME='cmt-znomp'
 REPO_ROOT=$(git rev-parse --show-toplevel)
 VERSION=$(git describe --tags --dirty)
 COMMIT_HASH=$(git rev-parse --short HEAD 2>/dev/null)
