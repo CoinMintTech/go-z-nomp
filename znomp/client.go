@@ -1,8 +1,6 @@
 package znomp
 
 import (
-	"net/http"
-
 	"github.com/steenzout/go-cfg"
 )
 
@@ -18,24 +16,4 @@ func NewClient(c cfg.Config) *Client {
 		authenticate: AuthenticationFunc(c),
 		endpoint:     Endpoint(c),
 	}
-}
-
-// Blocks returns the global blocks stats.
-func (c Client) Blocks() error {
-	var (
-		err error
-		req *http.Request
-	)
-
-	req, err = http.NewRequest("GET", c.endpoint, nil)
-	if err != nil {
-		return err
-	}
-
-	err = c.authenticate(req)
-	if err != nil {
-		return err
-	}
-
-	return nil
 }
