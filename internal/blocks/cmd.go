@@ -19,7 +19,10 @@ package blocks
 import (
 	"fmt"
 
+	"github.com/steenzout/go-cfg"
 	cli "gopkg.in/urfave/cli.v1"
+
+	"github.com/CoinMintTech/go-z-nomp/znomp"
 )
 
 // ValidateArg nothing to be validated.
@@ -29,5 +32,7 @@ func ValidateArg(c *cli.Context) error {
 
 // Run a.
 func Run(cctx *cli.Context) error {
+	c := znomp.Config(cfg.Root())
+
 	return fmt.Errorf("not implemented")
 }
