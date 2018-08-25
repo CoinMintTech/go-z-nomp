@@ -15,8 +15,8 @@ const (
 	envAuthHTTPUser     = "AUTH_HTTP_USER"
 )
 
-// GetAuth returns the authentication method.
-func GetAuth(c cfg.Config) cfg.Config {
+// Config returns package configuration.
+func Config(c cfg.Config) cfg.Config {
 	v := strings.ToLower(strings.TrimSpace(env.GetOptionalString(envAuth, "http")))
 
 	if v == "http" {
