@@ -1,4 +1,4 @@
-# go-z-nomp
+# z-nomp
 
 [![License](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg?style=flat)][license]
 [![Build Status](https://travis-ci.org/CoinMintTech/go-z-nomp.svg?branch=master)](https://travis-ci.org/CoinMintTech/go-z-nomp/)
@@ -7,7 +7,7 @@
 
 [![Project](https://www.openhub.net/p/go-CoinMintTech-cmt-znomp/widgets/project_thin_badge.gif)][project]
 
-Golang client for the z-nomp mining pool.
+Golang client for the [z-nomp][z-nomp] mining pool.
 
 ## Environment variables
 
@@ -18,3 +18,4 @@ Golang client for the z-nomp mining pool.
 
 [license]:  https://raw.githubusercontent.com/CoinMintTech/go-z-nomp/master/LICENSE   "Apache License 2.0"
 [project]:  https://www.openhub.net/p/go-CoinMintTech-z-nomp/    "OpenHub project page"
+[z-nomp]:   https://github.com/z-classic/z-nomp "z-nomp"
