@@ -10,27 +10,27 @@ import (
 )
 
 const (
-	envAuth             = "AUTH"
-	envAuthHTTPPassword = "AUTH_HTTP_PASSWORD"
-	envAuthHTTPUser     = "AUTH_HTTP_USER"
+	envAuth             = "ZNOMP_AUTH"
+	envAuthHTTPPassword = "ZNOMP_AUTH_HTTP_PASSWORD"
+	envAuthHTTPUser     = "ZNOMP_AUTH_HTTP_USER"
+	envEndpoint         = "ZNOMP_ENDPOINT"
 )
 
 // Config returns package configuration.
 func Config(c cfg.Config) cfg.Config {
-	v := strings.ToLower(strings.TrimSpace(env.GetOptionalString(envAuth, "http")))
+	endpoint := strings.ToLower(strings.TrimSpace(env.GetString(envEndpoint)))
+	c = WithEndpoint(c, endpoint)
 
-	if v == "http" {
+	auth := strings.ToLower(strings.TrimSpace(env.GetOptionalString(envAuth, "http")))
+
+	if auth == "http" {
 		username := env.GetString(envAuthHTTPUser)
 		password := env.GetString(envAuthHTTPPassword)
 
-		c = WithAuthentication(c, HTTPBasicAuth)
-		c = WithAuthHTTPassword(c, password)
-		c = WithAuthHTTPUser(c, username)
-
-		return c
+		return WithAuthenticationFunc(c, httpAuth(username, password))
 	}
 
-	errm := fmt.Sprintf("invalid authentication method: %s", v)
+	errm := fmt.Sprintf("invalid authentication method: %s", auth)
 	log.Println(errm)
 	panic(errm)
 }

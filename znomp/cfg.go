@@ -23,37 +23,26 @@ import (
 type configKey string
 
 const (
-	keyAuth             = configKey(iota)
-	keyAuthHTTPPassword = configKey(iota)
-	keyAuthHTTPUser     = configKey(iota)
+	keyAuthFunc = configKey(iota)
+	keyEndpoint = configKey(iota)
 )
 
-// Authentication returns the authentication method.
-func Authentication(c cfg.Config) Auth {
-	return c.Value(keyAuth).(Auth)
+// AuthenticationFunc returns the authentication function.
+func AuthenticationFunc(c cfg.Config) AuthFunc {
+	return c.Value(keyAuthFunc).(AuthFunc)
 }
 
-// AuthHTTPassword returns the password for HTTP Basic Authentication.
-func AuthHTTPassword(c cfg.Config) string {
-	return c.Value(keyAuth).(string)
+// Endpoint returns the z-nomp endpoint.
+func Endpoint(c cfg.Config) string {
+	return c.Value(keyEndpoint).(string)
 }
 
-// AuthHTTPUser returns the user for HTTP Basic Authentication.
-func AuthHTTPUser(c cfg.Config) string {
-	return c.Value(keyAuth).(string)
+// WithAuthenticationFunc sets the authentication function.
+func WithAuthenticationFunc(c cfg.Config, f AuthFunc) cfg.Config {
+	return cfg.WithValue(c, keyAuthFunc, f)
 }
 
-// WithAuthentication sets the authentication method.
-func WithAuthentication(c cfg.Config, a Auth) cfg.Config {
-	return cfg.WithValue(c, keyAuth, a)
-}
-
-// WithAuthHTTPassword set password for HTTP Basic Authentication.
-func WithAuthHTTPassword(c cfg.Config, v string) cfg.Config {
-	return cfg.WithValue(c, keyAuthHTTPPassword, v)
-}
-
-// WithAuthHTTPUser set username for HTTP Basic Authentication.
-func WithAuthHTTPUser(c cfg.Config, v string) cfg.Config {
-	return cfg.WithValue(c, keyAuthHTTPUser, v)
+// WithEndpoint sets the z-nomp endpoint.
+func WithEndpoint(c cfg.Config, s string) cfg.Config {
+	return cfg.WithValue(c, keyEndpoint, s)
 }

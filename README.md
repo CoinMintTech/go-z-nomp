@@ -11,9 +11,10 @@ Golang client for the z-nomp mining pool.
 
 ## Environment variables
 
-- **AUTH**: authentication method (default: `http`).
-- **AUTH_HTTP_PASSWORD**: password for HTTP basic authentication method.
-- **AUTH_HTTP_USER**: username for HTTP basic authentication method.
+- **ZNOMP_AUTH**: authentication method (default: `http`).
+- **ZNOMP_AUTH_HTTP_PASSWORD**: password for HTTP basic authentication method.
+- **ZNOMP_AUTH_HTTP_USER**: username for HTTP basic authentication method.
+- **ZNOMP_ENDPOINT**: the z-nomp endpoint.
 
 [license]:  https://raw.githubusercontent.com/steenzout/go-z-nomp/master/LICENSE   "Apache License 2.0"
 [project]:  https://www.openhub.net/p/go-steenzout-cmt-znomp/    "OpenHub project page"
